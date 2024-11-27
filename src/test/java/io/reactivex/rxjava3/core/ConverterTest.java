@@ -58,6 +58,7 @@ public final class ConverterTest extends RxJavaTest {
             Single.just(1).to(new SingleConverter<Integer, Integer>() {
                 @Override
                 public Integer apply(Single<Integer> v) {
+                     throw new TestException("Forced failure");
                     throw new TestException("Forced failure");
                 }
             });
